@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net9.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -18,13 +18,6 @@
 		<Description>A .NET library that provides IP restriction on endpoints using attributes and entire web application, both through configurable allow and deny lists. With this library, you can require access to your API from specific IP addresses (both IPv4 an IPv6) or block specific ranges.</Description>
 		<PackageTags>authorizarion;dotnet;.NET;dotnetcore;.NET Core;ip;ip restriction;whitelist</PackageTags>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<None Include="README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-	</ItemGroup>
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" Version="2.3.0"></FrameworkReference>
 	</ItemGroup>
@@ -32,6 +25,12 @@
 		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
 			<_Parameter1>$(AssemblyName).Tests</_Parameter1>
 		</AssemblyAttribute>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="..\..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="IPNetwork2" Version="3.1.764" />
